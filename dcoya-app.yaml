@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dcoya
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dcoya
+  template:
+    metadata:
+      labels:
+        app: dcoya
+    spec:
+      containers:
+      - name: dcoya
+        image: sigler05/dcoya_app:v2
+        ports:
+        - containerPort: 5000
+
