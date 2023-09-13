@@ -17,13 +17,25 @@ spec:
         image: nginx:alpine
         ports:
         - containerPort: 80
+        - containerPort: 443
         volumeMounts:
         - name: nginx-config
           mountPath: /etc/nginx/conf.d/default.conf
           subPath: nginx-config.conf
           readOnly: true
+        - name: secret-tls
+          mountPath: /etc/nginx/certificate/nginx.crt
+          subPath: tls.crt
+          readOnly: true
+        - name: secret-tls
+          mountPath: /etc/nginx/certificate/nginx.key
+          subPath: tls.key
+          readOnly: true
       volumes:
       - name: nginx-config
         configMap:
           name: nginx-config
+      - name: secret-tls
+        secret:
+          secretName: secret-tls
 
