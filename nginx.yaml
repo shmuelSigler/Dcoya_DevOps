@@ -24,12 +24,7 @@ spec:
           subPath: nginx-config.conf
           readOnly: true
         - name: secret-tls
-          mountPath: /etc/nginx/certificate/nginx.crt
-          subPath: tls.crt
-          readOnly: true
-        - name: secret-tls
-          mountPath: /etc/nginx/certificate/nginx.key
-          subPath: tls.key
+          mountPath: /etc/nginx/certificate
           readOnly: true
       volumes:
       - name: nginx-config

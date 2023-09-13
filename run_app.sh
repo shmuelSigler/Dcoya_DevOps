@@ -7,7 +7,7 @@ minikube start
 kubectl create configmap nginx-config --from-file=nginx-config.conf
 
 # Create secret
-kubectl create -f secret-tls.yaml
+kubectl create secret tls secret-tls --cert=certifications/nginx.crt --key=certifications/nginx.key
 
 # Deploy Manifests
 kubectl apply -f dcoya-app.yaml -f dcoya-service.yaml -f nginx.yaml -f nginx-service.yaml
