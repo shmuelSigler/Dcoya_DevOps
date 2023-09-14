@@ -1,5 +1,5 @@
 # Building and Deploying a Secure Flask App with Nginx and Gunicorn on Minikube
-This README provides a step-by-step guide on how to deploy, and test a secure Flask web application using Nginx as a reverse proxy and Gunicorn as the application server on a Minikube cluster while emphasizing security best practices, including using a non-root user in the Dockerfile, minimizing image size, and implementing SSL/TLS encryption.
+This README provides a step-by-step guide on how to deploy and test a secure Flask web application using Nginx as a reverse proxy and Gunicorn as the application server on a Minikube cluster while emphasizing security best practices, including using a non-root user in the Dockerfile, minimizing image size, and implementing SSL/TLS encryption.
 
 ## NGINX and Gunicorn Integration                                                                   
  To enhance the performance and reliability of the application, NGINX and Gunicorn have been integrated into the project. NGINX acts as a reverse proxy server, forwarding requests to Gunicorn, which serves the application. This setup provides benefits such as load balancing, improved security, and better handling of client connections.
@@ -20,7 +20,8 @@ The NGINX configuration plays a significant role in directing incoming traffic t
  - Copying only necessary files and reducing image size
  - Avoiding the generation of Python bytecode files within the container
  - Running the application as a non-root user
- These practices collectively reduce the attack surface and follow best security practices for Docker containerization.
+
+These practices collectively reduce the attack surface and follow best security practices for Docker containerization.
 
  ## Run Locally
 
@@ -57,7 +58,7 @@ Test the application
 ```
 
 #### Minikube Deployment Automation Script
-The script streamlines the deployment process on a Minikube cluster, reducing manual intervention. It starts by initializing Minikube, setting up a local Kubernetes cluster where your application will run. This automation saves time and ensures a consistent deployment environment.
+The script streamlines the deployment process on a Minikube cluster, reducing manual intervention. It starts by initializing Minikube, setting up a local Kubernetes cluster where the application will run. This automation saves time and ensures a consistent deployment environment.
 
 - **Configuration Management and TLS Security**: The script creates a ConfigMap to manage the Nginx configuration centrally, making it easier to maintain. Additionally, it generates a TLS secret using SSL/TLS certificates. 
 
