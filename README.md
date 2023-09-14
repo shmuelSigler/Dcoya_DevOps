@@ -51,6 +51,10 @@ Run script that automates the deployment process
   source run_app.sh
 ```
 
+Enter a password in the new terminal because Minikube's minikube tunnel command requires root permissions.
+- minikube tunnel needs to configure network routing rules that allow traffic from the host machine to reach the services running in the Minikube cluster. This involves adding and modifying network routes and iptables rules, which are typically restricted to privileged users for security reasons. 
+
+
 Test the application
 
 ```bash
