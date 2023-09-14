@@ -1,11 +1,11 @@
 # Building and Deploying a Secure Flask App with Nginx and Gunicorn on Minikube
-This README provides a step-by-step guide on how to build, deploy, and test a secure Flask web application using Nginx as a reverse proxy and Gunicorn as the application server on a Minikube cluster while emphasizing security best practices, including using a non-root user in the Dockerfile, minimizing image size, and implementing SSL/TLS encryption.
+This README provides a step-by-step guide on how to deploy, and test a secure Flask web application using Nginx as a reverse proxy and Gunicorn as the application server on a Minikube cluster while emphasizing security best practices, including using a non-root user in the Dockerfile, minimizing image size, and implementing SSL/TLS encryption.
 
 ## NGINX and Gunicorn Integration                                                                   
  To enhance the performance and reliability of the application, NGINX and Gunicorn have been integrated into the project. NGINX acts as a reverse proxy server, forwarding requests to Gunicorn, which serves the application. This setup provides benefits such as load balancing, improved security, and better handling of client connections.
- ![nginx_gunicorn](https://github.com/shmuelSigler/Dcoya_DevOps/blob/main/weather%20app%20screenshot.png?raw=true)
+ ![nginx_gunicorn](https://github.com/shmuelSigler/Dcoya_DevOps/blob/main/gninx_gunicorn.png?raw=true)
 
- #### NGINX Configuration                                                                             
+ #### [NGINX Configuration](https://github.com/shmuelSigler/Dcoya_DevOps/blob/main/nginx-config.conf)                                                                             
 The NGINX configuration plays a significant role in directing incoming traffic to the appropriate backend servers. In my project, NGINX is set up as a reverse proxy, which means it receives client requests and forwards them to the Gunicorn instances running the Python application. Let's take a closer look at the key components of NGINX's configuration:
 
                   
@@ -14,7 +14,7 @@ The NGINX configuration plays a significant role in directing incoming traffic t
   - **SSL/TLS**: SSL certificate and private key are specified for secure communication. HTTP to HTTPS Redirection, <ins>This ensures that all traffic is encrypted and secure.</ins>
 
   
- ## Dockerfile        
+ ## [Dockerfile](https://github.com/shmuelSigler/Dcoya_DevOps/blob/main/app/Dockerfile)        
  Dockerfile enhances security by using:
  - Minimal Alpine base image
  - Copying only necessary files and reducing image size
