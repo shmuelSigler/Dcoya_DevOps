@@ -72,3 +72,6 @@ The script streamlines the deployment process on a Minikube cluster, reducing ma
 
 - **User-Friendly and Convenient**: To enhance usability, the script exports an environment variable (APP_URL) with the external IP address of the application making it convenient for quick testing by just running the test script. Furthermore, the script opens the application on default web browser for quick access.
 
+<a href="https://trackgit.com">
+<img src="https://us-central1-trackgit-analytics.cloudfunctions.net/token/ping/lnvizbjg3g8lt7g6j24l" alt="trackgit-views" />
+</a>
